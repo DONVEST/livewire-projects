@@ -1,7 +1,7 @@
 <!-- Keep refreshing list -->
 <div wire:poll.keep-alive.5s class="container-fluid pt-4 px-4 ">
     <div class="bg-light text-center rounded p-4 flex-row">
-        @if ($count($users) != 0)
+        @if (count($users) != 0)
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Recent Accounts</h6>
 
