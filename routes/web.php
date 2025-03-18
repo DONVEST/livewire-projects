@@ -13,3 +13,7 @@ Route::get('/register', function () {
 Route::get('/todo', function () {
     return view('todo_list');
 });
+
+Route::get('/modal', function () {
+    return view('modal');
+});
