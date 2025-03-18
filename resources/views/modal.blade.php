@@ -15,7 +15,8 @@
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    
+    @livewireStyles
+    @livewireScripts
 </head>
 
 <body class="p-5">
@@ -25,16 +26,19 @@
     
     
     
+    <x-modal name='1' title="modal 1">
+        <livewire:register />
+    </x-modal>
     
     
-    
-    <x-modal title="modal 1">
-        <x-slot:body>
-            <livewire:register />
-        </x-slot:body>
+    <x-modal name='2' title="modal 2">
+        <livewire:users-modal />
     </x-modal>
 
-    <button x-data x-on:click="$dispatch('open-modal')" 
+    <button x-data @click="$dispatch('open-modal',{name:'1'})" 
+    class="px-3 py-1 bg-teal-500 text-white rounded">Open Modal</button>
+
+    <button x-data @click="$dispatch('open-modal',{name:'2'})" 
     class="px-3 py-1 bg-teal-500 text-white rounded">Open Modal</button>
     
 
