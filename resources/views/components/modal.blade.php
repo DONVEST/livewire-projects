@@ -1,4 +1,6 @@
 @props(['name','title'])
+
+
 <div x-data="{show:false, name:'{{$name}}'}" x-show="show" 
 x-on:open-modal.window="show = ($event.detail.name === name)" 
 x-on:close-modal.window="show = false"
@@ -11,6 +13,7 @@ class="fixed z-50 inset-0 m-auto">
 <div class="fixed inset-0 bg-gray-300 opacity-400 " x-on:click="$dispatch('close-modal')"></div>
 
 <div class="bg-white rounded m-auto fixed inset-0 w-auto overflow-y-auto" style="max-height:500px;">
+    
     @if (isset($title))
         <div class="px-4 py-3 flex items-center justify-between border-b border-gray-300">
             <div class="text-xl text-gray-800">{{ $title }}</div>
@@ -21,7 +24,11 @@ class="fixed z-50 inset-0 m-auto">
             </button>
         </div>
     @endif
-    <div>{{$slot}}</div>
+
+    <div>
+        {{$slot}}
+    </div>
+
 </div>
 
 </div>
