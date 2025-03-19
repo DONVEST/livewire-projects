@@ -44,14 +44,14 @@
                         <td>{{$user->email}}</td>
                         <td>{{$user->created_at->diffForHumans()}}</td>
                         <td><button class="btn-primary p-1 m-auto">View</button></td>
-                    </tr>  
+                    </tr>
                     @endforeach
                 </tbody>
             </table>
             {{$users->links()}}
         </div>
         @else
-            
+
         @endif
     </div>
 </div>

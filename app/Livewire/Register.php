@@ -27,15 +27,15 @@ class Register extends Component
 
     //for accepting file uploads
     use WithFileUploads;
-    
+
 
     public function placeholder(){
         return view('text_placeholder');
     }
-    
+
     public function render()
     {
-        
+
         return view('livewire.register');
     }
 
@@ -43,15 +43,15 @@ class Register extends Component
 
         sleep(1);
 
-        $fields = $this->validate();  
-        
+        $fields = $this->validate();
+
         if($this->image){
             $image_name = $this->image->hashName();
             $this->image->store('images/uploads','public');
             $fields['image'] = $image_name;
         }
 
-        
+
         $user = User::create($fields);
 
         //reset fields
@@ -66,11 +66,11 @@ class Register extends Component
 
         //comunicate to other components on page
         $this->dispatch('user-created',compact('user'));
-        
+
     }
 
     public function reloadList(){
         $this->dispatch('user-created');
-        
+
     }
 }

@@ -17,3 +17,7 @@ Route::get('/todo', function () {
 Route::get('/modal', function () {
     return view('modal');
 });
+
+Route::get('/index', function () {
+    return view('index');
+});

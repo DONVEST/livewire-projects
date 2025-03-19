@@ -15,11 +15,11 @@ class UsersModal extends Component
 
     #[Rule('required|min:3|max:50')]
     public $search;
-    
+
     // listen for event 'user-created' and execute upadateList
     #[On('user-created')]
     public function updateList($user = null){}
-    
+
     
     public function placeholder(){
         return view('text_placeholder');
