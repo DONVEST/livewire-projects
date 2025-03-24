@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\User;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -13,12 +14,12 @@ class UsersModal extends Component
 
     use WithPagination;
 
-    #[Rule('required|min:3|max:50')]
+    #[Url()]
     public $search;
     
     // listen for event 'user-created' and execute upadateList
-    #[On('user-created')]
-    public function updateList($user = null){}
+    // #[On('user-created')]
+    // public function updateList($user = null){}
     
     
     public function placeholder(){

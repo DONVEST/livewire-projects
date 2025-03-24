@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/filter', function () {
+    return view('filter');
+});
+
 Route::get('/register', function () {
     return view('register');
 });
